@@ -1,0 +1,14 @@
+.header-text{
+    background-color: gray;
+    display: flex;
+
+}
+.logo{
+    width: 100px;
+    height: 100px;
+}
+.t{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 70px;
+    margin-left: 250px;
+}
