@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('shelves', function (Blueprint $table) {
             $table->bigIncrements('shelfID');
             $table->string('shelfCode');
-            $table->unsignedBigInteger('floorNumber');
-            $table->foreignId('floorNumber')->references('floorNumber')->on('floors');
+            // $table->unsignedBigInteger('floorNumber');
+            // $table->foreign('floorNumber')->references('floorNumber')->on('floors');
             $table->timestamps();
         });
     }
