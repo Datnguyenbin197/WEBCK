@@ -13,7 +13,6 @@
             <tr>
                 <th>Mã sách</th>
                 <th>Tên sách</th>
-                <th>Ảnh minh hoạ</th>
                 <th>Tác giả</th>
                 <th>Kệ</th>
                 <th>Giá</th>

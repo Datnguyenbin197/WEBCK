@@ -7,9 +7,7 @@
 <body>
     <h3 id="formTitle" class="mb-3">Thêm sách</h3>
     
-    <!-- Main Form -->
-    <form id="createForm" class="mb-4">
-        <input type="hidden" id="Ten" name="Ten"> <!-- Hidden field for ID when editing -->
+   
 
         <!-- Tên NCC -->
         <div class="mb-3">
@@ -23,8 +21,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="Tacgia" class="form-label">Tác giả</label>
-            <input type="text" class="form-control" id="Tacgia" name="Tacgia" required>
+            <label for="NameTG" class="form-label">Tác giả</label>
+            <input type="text" class="form-control" id="NameTG" name="NameTG" required>
         </div>
 
 
@@ -47,5 +45,16 @@
         <button type="submit" class="btn btn-primary" id="submitButton">Thêm mới</button>
         <button type="button" class="btn btn-secondary" id="cancelButton" style="display: none;">Hủy</button>
     </form>
+
+    <script>
+         $('#createForm').submit(function (event) {
+        event.preventDefault();
+        const formData = $(this).serialize();
+        const url = $('#IDB').val() ? 'create_supplier.php';
+        $.post(url, formData, function (response) {
+            alert(response.message);
+        }, 'json');
+    });
+    </script>
 </body>
 @endsection
