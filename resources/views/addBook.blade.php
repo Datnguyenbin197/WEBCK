@@ -13,24 +13,17 @@
 
         <!-- Tên NCC -->
         <div class="mb-3">
-            <label for="TenNCC" class="form-label">Tên NCC:</label>
-            <input type="text" class="form-control" id="TenNCC" name="TenNCC" required>
+            <label for="IDB" class="form-label">Mã sách</label>
+            <input type="text" class="form-control" id="IDB" name="IDB" required>
         </div>
-
-        <!-- File Upload Section -->
-        <div class="mb-3">
-            <label class="form-label">Tải lên hình ảnh:</label>
-            {{-- <form method="POST" action="upload.php" enctype="multipart/form-data">
-                <input type="hidden" name="size" value="1000000">
-                <input type="file" name="image" class="form-control">
-                <button type="submit" name="upload" class="btn btn-secondary mt-2">POST</button>
-            </form>
-            <?php require "xuly.php" ?> --}}
-        </div>
-
       
         <div class="mb-3">
-            <label for="Tacgia" class="form-label">Tác giả:</label>
+            <label for="NameB" class="form-label">Tên sách</label></label>
+            <input type="text" class="form-control" id="NameB" name="NameB" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="Tacgia" class="form-label">Tác giả</label>
             <input type="text" class="form-control" id="Tacgia" name="Tacgia" required>
         </div>
 

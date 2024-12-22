@@ -11,6 +11,7 @@
     <table class="table">
         <thead class="table-dark">
             <tr>
+                <th>Mã sách</th>
                 <th>Tên sách</th>
                 <th>Ảnh minh hoạ</th>
                 <th>Tác giả</th>
@@ -35,14 +36,14 @@
             suppliers.forEach(supplier => {
                 rows += `
                     <tr>
-                        <td>${supplier.MaNCC}</td>
-                        <td>${supplier.}</td>
-                        <td>${supplier.}</td>
-                        <td>${supplier.}</td>
-                        <td>${supplier.}</td>
+                        <td>${supplier.IDB}</td>
+                        <td>${supplier.NameB}</td>
+                        <td>${supplier.NameTG}</td>
+                        <td>${supplier.KE}</td>
+                        <td>${supplier.TANG}</td>
                         <td>
-                            <button class="btn btn-warning btn-sm" onclick="editSupplier(${supplier.MaNCC})">Sửa</button>
-                            <button class="btn btn-danger btn-sm" onclick="deleteSupplier(${supplier.MaNCC})">Xóa</button>
+                            <button class="btn btn-warning btn-sm" onclick="editSupplier(${supplier.IDB})">Sửa</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteSupplier(${supplier.IDB})">Xóa</button>
                         </td>
                     </tr>
                 `;
@@ -55,7 +56,7 @@
     $('#createForm').submit(function (event) {
         event.preventDefault();
         const formData = $(this).serialize();
-        const url = $('#MaNCC').val() ? 'update_supplier.php' : 'create_supplier.php';
+        const url = $('#IDB').val() ? 'update_supplier.php' : 'create_supplier.php';
         $.post(url, formData, function (response) {
             alert(response.message);
             if (response.status === 'success') {
@@ -81,11 +82,12 @@
     function editSupplier(id) {
         $.get('get_supplier.php', { id: id }, function (data) {
             const supplier = JSON.parse(data);
-            $('#MaNCC').val(supplier.MaNCC); // Điền dữ liệu vào form
-            $('#TenNCC').val(supplier.TenNCC);
-            $('#DiaChi').val(supplier.DiaChi);
-            $('#SDT').val(supplier.SDT);
-            $('#formTitle').text('Sửa nhà cung cấp');
+            $('#IDB').val(supplier.IDB); // Điền dữ liệu vào form
+            $('#NameB').val(supplier.NameB);
+            $('#NameTG').val(supplier.NameTG);
+            $('#KE').val(supplier.KE);
+            $('#TANG').val(supplier.TANG);
+            $('#formTitle').text('Sửa');
             $('#submitButton').text('Cập nhật');
             $('#cancelButton').show();
         });
@@ -98,11 +100,12 @@
 
     // Reset form về trạng thái mặc định
     function resetForm() {
-        $('#MaNCC').val('');
-        $('#TenNCC').val('');
-        $('#DiaChi').val('');
-        $('#SDT').val('');
-        $('#formTitle').text('Thêm nhà cung cấp');
+        $('#IDB').val('');
+        $('#NameB').val('');
+        $('#NameTG').val('');
+        $('#KE').val('');
+        $('#TANG').val('');
+        $('#formTitle').text('Thêm');
         $('#submitButton').text('Thêm mới');
         $('#cancelButton').hide();
     }
