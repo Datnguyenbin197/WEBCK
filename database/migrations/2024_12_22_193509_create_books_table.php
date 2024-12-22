@@ -1,3 +1,4 @@
+@ -0,0 +1,36 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -17,11 +18,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('category');
-            // $table->unsignedBigInteger('shelfID');
-            // $table->string('shelfCode');
-            // $table->unsignedBigInteger('floorNumber');
-            // $table->integer('bookQuantity');
-            // $table->foreign('shelfID')->references('shelfID')->on('shelves');
+            $table->unsignedBigInteger('shelfID');
+            $table->string('shelfCode');
+            $table->unsignedBigInteger('floorNumber');
+            $table->integer('bookQuantity');
+            $table->foreign('shelfID')->references('shelfID')->on('shelves');
             $table->timestamps();
         });
     }

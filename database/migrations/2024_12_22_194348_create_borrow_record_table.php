@@ -1,3 +1,4 @@
+@ -0,0 +1,37 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -16,13 +17,13 @@ return new class extends Migration
             $table->unsignedBigInteger('studentID');
             $table->string('studentName');
             $table->string('studentClass');
-            // $table->unsignedBigInteger('bookID');
-            // $table->string('bookCode');
-            // $table->string('title');
-            // $table->string('author');
-            // $table->string('category');
-            // $table->foreign('bookID')->references('bookID')->on('book');
-            // $table->foreign('studentID')->references('studentID')->on('students');
+            $table->unsignedBigInteger('bookID');
+            $table->string('bookCode');
+            $table->string('title');
+            $table->string('author');
+            $table->string('category');
+            $table->foreign('bookID')->references('bookID')->on('books');
+            $table->foreign('studentID')->references('studentID')->on('students');
             $table->timestamps();
         });
     }
