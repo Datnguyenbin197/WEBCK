@@ -32,7 +32,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/muonBook">Mượn mượn/trả sách</a></li>
-                            <li><a class="dropdown-item" href="#">Lịch sử mượn/trả sách</a></li>
+                            <li><a class="dropdown-item" href="/LS">Lịch sử mượn/trả sách</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -22,3 +22,6 @@ Route::get('/addBook', function () {
 Route::get('/muonBook', function () {
     return view('muonBook');
 });
+Route::get('/LS', function () {
+    return view('LS');
+});
