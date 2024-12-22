@@ -21,4 +21,6 @@
     <label for="Tang" class="form-label">Tầng</label>
     <input type="text" class="form-control" id="Tang" name="Tang" required>
 </div>
+<button type="submit" class="btn btn-primary" id="submitButton">Thêm mới</button>
+        <button type="button" class="btn btn-secondary" id="cancelButton" style="display: none;">Hủy</button>
 @endsection

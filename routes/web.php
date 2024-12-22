@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/addBook', function () {
     return view('addBook');
 });
+Route::get('/muonBook', function () {
+    return view('muonBook');
+});
