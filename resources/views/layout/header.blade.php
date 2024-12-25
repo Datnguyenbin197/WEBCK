@@ -14,8 +14,7 @@
         <h1 class="t">QUẢN LÝ THƯ VIỆN</h1>
         
      </div>
-    </div>
-
+    </div> 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -31,15 +30,17 @@
                             Mượn trả sách
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/muonBook">Mượn mượn/trả sách</a></li>
-                            <li><a class="dropdown-item" href="/LS">Lịch sử mượn/trả sách</a></li>
+                            <li><a class="dropdown-item" href="/muonBook">Mượn sách</a></li>
+                            <li><a class="dropdown-item" href="/timtraBook">Trả sách</a></li>
+                            <li><a class="dropdown-item" href="/LS">Lịch sử mượn/trả sách</a></li>                       
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" role="search" action="{{ route('searchBook') }}" method="GET" style="height: 50px">
+                    <input class="form-control me-2" type="search" name="query" placeholder="Nhập tên sách" aria-label="Search" required>
+                    <button class="btn btn-outline-success" type="submit"><h6>Tìm kiếm</h6</button>
                 </form>
+                
             </div>
         </div>
     </nav>
