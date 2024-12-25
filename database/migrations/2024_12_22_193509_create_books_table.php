@@ -1,4 +1,4 @@
-@ -0,0 +1,28 @@
+@ -0,0 +1,36 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -13,13 +13,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->string('IDB', 10)->primary();
-            $table->string('NameB');
-            $table->string('NameTG');
-            $table->string('KE');
-            $table->integer('TANG');
+            $table->bigIncrements('bookID');
+            $table->string('bookCode')->unique();
+            $table->string('title');
+            $table->string('author');
+            $table->string('category');
+            $table->unsignedBigInteger('shelfID');
+            $table->string('shelfCode');
+            $table->unsignedBigInteger('floorNumber');
+            $table->integer('bookQuantity');
+            $table->foreign('shelfID')->references('shelfID')->on('shelves');
             $table->timestamps();
-            
         });
     }
 
